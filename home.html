@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Birthday Celebration</title>
+  <style>
+    .background-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      filter: blur(7px); /* Adjust the blur value as desired */
+    }
+    .background-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #ffcc00;
+      font-size: 36px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      font-family: cursive;
+      color: #ffffff;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ffcc00;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      margin: 10px;
+    }
+
+    .slideshow {
+      margin: 0px auto;
+      width: 100%;
+      height: 800px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slideshow img {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slideshow img.active {
+      opacity: 1;
+    }
+
+    .countdown {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="background-container">
+    <img class="background-image" src="C:\Users\Windows\Downloads\home.jpeg" alt="Background Image">
+  </div>
+
+  <div class="container">
+    <h1>!!!Happy Birthday Babyyy!!!</h1>
+    <p>Just Made something I have been learning for you , I hope you like it!<br> Click on any of these pages and you'll find something that i made for you</p>
+    <a href="letter.html" class="button">A Letter</a>
+    <a href="messages.html" class="button">Messages for You</a>
+    <a href="surprise.html" class="button">Pictures of Us</a>
+    <a href="songs.html" class="button">Songs for you</a>
+    <a href="index.html" class="button">Welcome Page</a>
+    <div class="slideshow">
+      <img src="C:\Users\Windows\Downloads\1.jpeg" alt="Slideshow Image" class="active">
+      <img src="C:\Users\Windows\Downloads\2.jpeg" alt="Slideshow Image">
+      <img src="C:\Users\Windows\Downloads\3.jpeg" alt="Slideshow Image">
+      <img src="C:\Users\Windows\Downloads\4.jpeg" alt="Slideshow Image">
+      <img src="C:\Users\Windows\Downloads\5.jpeg" alt="Slideshow Image">
+      <img src="C:\Users\Windows\Downloads\6.jpeg" alt="Slideshow Image">
+      <img src="C:\Users\Windows\Downloads\7.jpeg" alt="Slideshow Image">
+      <img src="C:\Users\Windows\Downloads\8.jpeg" alt="Slideshow Image">
+      <img src="C:\Users\Windows\Downloads\9.jpeg" alt="Slideshow Image">
+      <img src="C:\Users\Windows\Downloads\10.jpeg" alt="Slideshow Image">
+      <img src="C:\Users\Windows\Downloads\11.jpeg" alt="Slideshow Image">
+      <img src="C:\Users\Windows\Downloads\12.jpeg" alt="Slideshow Image">
+      <img src="C:\Users\Windows\Downloads\13.jpeg" alt="Slideshow Image">
+      <img src="C:\Users\Windows\Downloads\14.jpeg" alt="Slideshow Image">
+      <img src="C:\Users\Windows\Downloads\15.jpeg" alt="Slideshow Image">
+      <img src="C:\Users\Windows\Downloads\16.jpeg" alt="Slideshow Image">
+
+    </div>
+    <p class="countdown">Countdown: <span id="countdown"></span></p>
+  </div>
+
+  <script>
+    // Slideshow
+    var images = document.querySelectorAll(".slideshow img");
+    var currentImageIndex = 0;
+
+    setInterval(function() {
+      images[currentImageIndex].classList.remove("active");
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      images[currentImageIndex].classList.add("active");
+    }, 1500); // Change slide every 3 seconds
+
+    // Countdown Timer
+    var countdownDate = new Date("2023-07-19T00:00:00Z").getTime();
+
+    var countdownTimer = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = countdownDate - now;
+
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+
+      if (distance < 0) {
+        clearInterval(countdownTimer);
+        document.getElementById("countdown").innerHTML = "Event has started!";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>

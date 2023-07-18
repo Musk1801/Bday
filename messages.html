@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Messages for You</title>
+  <style>
+    .background-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      filter: blur(7px);
+    }
+    .background-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #ffcc00;
+      font-size: 36px;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      font-family: cursive;
+      color: #ffffff;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ffcc00;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      margin: 10px;
+    }
+
+    .envelope {
+      display: inline-block;
+      position: relative;
+      width: 280px;
+      height: 150px;
+      margin: 20px;
+      cursor: pointer;
+    }
+
+    .envelope .front,
+    .envelope .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #ffcc00;
+      border-radius: 5px;
+      transition: transform 0.3s;
+    }
+
+    .envelope .front {
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: black;
+      font-weight: bold;
+      font-family: 'Times New Roman', Times, serif;
+      transform-origin: top;
+    }
+
+    .envelope .back {
+      z-index: 1;
+      transform: rotateX(180deg);
+      padding: 10px;
+    }
+
+    .envelope.open .front {
+      transform: rotateX(-180deg);
+    }
+
+    .envelope.open .back {
+      transform: rotateX(0deg);
+    }
+  </style>
+</head>
+<body>
+    <div class="background-container">
+        <img class="background-image" src="C:\Users\Windows\Downloads\home.jpeg" alt="Background Image">
+      </div>
+  <div class="container">
+    <a href="letter.html" class="button">A Letter..</a>
+    <a href="surprise.html" class="button">Pictures of Us</a>
+    <a href="home.html" class="button">Home</a>
+    <a href="index.html" class="button">Welcome Page</a>
+    <a href="songs.html" class="button">Songs for you</a>
+    <h1>Messages for my Patutaa!!</h1>
+    <p>Each message is written by lots of love by ghopaa...open whichever you feel like!</p>
+    <script>
+      const messages = [
+        "Happy birthday to the love of my life! You fill my days with joy and my heart with love. I'm grateful for every moment we share.",
+        "On your special day, I want you to know that you are the best thing that has ever happened to me. I love you more than words can express. ",
+        "To the man who makes my heart skip a beat and my life complete, happy birthday!",
+        "You bring so much happiness into my life, and I'm forever grateful for your love.",
+        "to the one who knows me better than anyone else. Thank you for accepting me for who I am and loving me unconditionally.",
+        "You are my everything, and I'm excited to create more beautiful memories together.",
+        "As we celebrate your special day, I want you to know that my love for you grows stronger with each passing day. Happy birthday to the man who stole my heart",
+        "Your smile brightens up my world, and your love makes me feel like the luckiest person alive!",
+        "Happy birthday to the person who makes my heart beat faster and my life worth living. I cherish every moment we spend together.",
+        "Today, I want to shower you with all the love and affection in my heart. You deserve nothing but the best EVERYDAY",
+        "You are not only my boyfriend but also my best friend and constant. Thank you for being there for me through thick and thin",
+        "You bring magic into my life and makes every day feel like a fairytale. You are my prince charming, and I'm forever grateful for your love.",
+        "Happy birthday to the one who understands me like no one else. Your love has brought meaning to my life.",
+        "Happy birthday to my partner in crime, my best friend, and the love of my life. With you, every day is an adventure filled with love and laughter",
+        "Just want to let you know , I love you to the moon and back...you are everything to me! A very happy birthday again hon",
+        
+      ];
+
+      for (let i = 0; i < messages.length; i++) {
+        const envelope = document.createElement("div");
+        envelope.className = "envelope";
+        envelope.onclick = function() {
+          toggleEnvelope(this);
+        };
+
+        const front = document.createElement("div");
+        front.className = "front";
+        front.textContent = "Click to Open";
+        envelope.appendChild(front);
+
+        const back = document.createElement("div");
+        back.className = "back";
+        const message = document.createElement("p");
+        message.textContent = messages[i];
+        back.appendChild(message);
+        envelope.appendChild(back);
+
+        document.body.appendChild(envelope);
+      }
+
+      function toggleEnvelope(envelope) {
+        envelope.classList.toggle("open");
+      }
+    </script>
+  </div>
+</body>
+</html>

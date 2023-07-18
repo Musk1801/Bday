@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Songs for You</title>
+  <style>
+    .background-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      z-index: -1;
+      filter: blur(7px); /* Adjust the blur value as desired */
+    }
+    .button {
+      display:inline-block;
+      padding: 10px 20px;
+      background-color: #ffcc00;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      margin: 10px;
+      align-items: center;
+      margin-left: 100px;
+    }
+    body {
+      background-image: url('C:/Users/Windows/Downloads/home.jpeg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .song {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .song:hover {
+      background-color:black;
+    }
+    .song img {
+      width: 200px;
+      height: 200px;
+      margin-right: center;
+    }
+    h1 {
+      color: #ffcc00;
+      font-size: 36px;
+      text-align: center;
+    }
+    .song span {
+       font-family: cursive;
+       font-size: larger;
+       color: aliceblue;
+    }
+  </style>
+</head>
+<body>
+    <div class="background-container">
+        <img src="C:\Users\Windows\Downloads\home.jpeg" class="background-image" alt="Background Image">
+      </div>
+  <h1>Songs for You</h1>
+  <a href="home.html" class="button">Home</a>
+  <a href="letter.html" class="button">A Letter</a>
+  <a href="messages.html" class="button">Messages for You</a>
+  <a href="surprise.html" class="button">Pictures of Us</a>
+  <a href="index.html" class="button">Welcome Page</a>
+  <div id="songs-list">
+    <div class="song" onclick="playSong(1, 'C:/Users/Windows/Downloads/song1.mp3', 'C:/Users/Windows/Downloads/1.jpeg')">
+      <img src="C:\Users\Windows\Downloads\1.jpeg" alt="Song 1">
+      <span>Song 1</span>
+    </div>
+    <div class="song" onclick="playSong(2, 'C:/Users/Windows/Downloads/song2.mp3', 'C:/Users/Windows/Downloads/2.jpeg')">
+      <img src="C:/Users/Windows/Downloads/2.jpeg" alt="Song 2">
+      <span>Song 2</span>
+    </div>
+    <div class="song" onclick="playSong(3, 'C:/Users/Windows/Downloads/song3.mp3', 'C:/Users/Windows/Downloads/3.jpeg')">
+        <img src="C:/Users/Windows/Downloads/3.jpeg" alt="Song 3">
+        <span>Song 3</span>
+      </div>
+      <div class="song" onclick="playSong(4, 'C:/Users/Windows/Downloads/song4.mp3', 'C:/Users/Windows/Downloads/17.jpeg')">
+        <img src="C:/Users/Windows/Downloads/17.jpeg" alt="Song 4">
+        <span>Song 4</span>
+      </div>
+      <div class="song" onclick="playSong(5, 'C:/Users/Windows/Downloads/song5.mp3', 'C:/Users/Windows/Downloads/16.jpeg')">
+        <img src="C:/Users/Windows/Downloads/16.jpeg" alt="Song 5">
+        <span>Song 5</span>
+      </div>
+      <div class="song" onclick="playSong(6, 'C:/Users/Windows/Downloads/song6.mp3', 'C:/Users/Windows/Downloads/6.jpeg')">
+        <img src="C:/Users/Windows/Downloads/6.jpeg" alt="Song 6">
+        <span>Song 6</span>
+      </div>
+      <div class="song" onclick="playSong(7, 'C:/Users/Windows/Downloads/song7.mp3', 'C:/Users/Windows/Downloads/7.jpeg')">
+        <img src="C:/Users/Windows/Downloads/7.jpeg" alt="Song 7">
+        <span>Song 7</span>
+      </div>
+      <div class="song" onclick="playSong(8, 'C:/Users/Windows/Downloads/song8.mp3', 'C:/Users/Windows/Downloads/8.jpeg')">
+        <img src="C:/Users/Windows/Downloads/8.jpeg" alt="Song 8">
+        <span>Song 8</span>
+      </div>
+      <div class="song" onclick="playSong(9, 'C:/Users/Windows/Downloads/song9.mp3', 'C:/Users/Windows/Downloads/9.jpeg')">
+        <img src="C:/Users/Windows/Downloads/9.jpeg" alt="Song 9">
+        <span>Song 9</span>
+      </div>
+      <div class="song" onclick="playSong(10, 'C:/Users/Windows/Downloads/song10.mp3', 'C:/Users/Windows/Downloads/10.jpeg')">
+        <img src="C:/Users/Windows/Downloads/10.jpeg" alt="Song 10">
+        <span>Song 10</span>
+      </div>
+      <div class="song" onclick="playSong(11, 'C:/Users/Windows/Downloads/song11.mp3', 'C:/Users/Windows/Downloads/11.jpeg')">
+        <img src="C:/Users/Windows/Downloads/11.jpeg" alt="Song 11">
+        <span>Song 11</span>
+      </div>
+      <div class="song" onclick="playSong(12, 'C:/Users/Windows/Downloads/song12.mp3', 'C:/Users/Windows/Downloads/12.jpeg')">
+        <img src="C:/Users/Windows/Downloads/12.jpeg" alt="Song 12">
+        <span>Song 12</span>
+      </div>
+      <div class="song" onclick="playSong(13, 'C:/Users/Windows/Downloads/song13.mp3', 'C:/Users/Windows/Downloads/13.jpeg')">
+        <img src="C:/Users/Windows/Downloads/13.jpeg" alt="Song 13">
+        <span>Song 13</span>
+      </div>
+      <div class="song" onclick="playSong(14, 'C:/Users/Windows/Downloads/song14.mp3', 'C:/Users/Windows/Downloads/14.jpeg')">
+        <img src="C:/Users/Windows/Downloads/14.jpeg" alt="Song 14">
+        <span>Song 14</span>
+      </div>
+      <div class="song" onclick="playSong(15, 'C:/Users/Windows/Downloads/song15.mp3', 'C:/Users/Windows/Downloads/15.jpeg')">
+        <img src="C:/Users/Windows/Downloads/15.jpeg" alt="Song 15">
+        <span>Song 15</span>
+      </div>
+  </div>
+
+  <audio id="audio-player" controls style="display: none;"></audio>
+
+  <script>
+    function playSong(songId, songUrl, backgroundUrl) {
+      var audioPlayer = document.getElementById('audio-player');
+      audioPlayer.src = songUrl;
+      audioPlayer.play();
+
+      var body = document.getElementsByTagName('body')[0];
+      body.style.backgroundImage = "url('" + backgroundUrl + "')";
+    }
+  </script>
+</body>
+</html>
